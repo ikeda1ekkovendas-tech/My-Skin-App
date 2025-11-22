@@ -108,7 +108,7 @@ export default function CheckoutPage() {
 
   const selectedPlanData = plans.find(plan => plan.id === selectedPlan)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!acceptTerms) {
       alert('Por favor, aceite os termos de serviço')
@@ -117,13 +117,12 @@ export default function CheckoutPage() {
     
     setIsProcessing(true)
     
-    // Simulate payment processing
     setTimeout(() => {
       setIsProcessing(false)
       alert('Pagamento processado com sucesso! Redirecionando...')
-      // In a real app, this would redirect to a success page
     }, 2000)
   }
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
