@@ -191,7 +191,7 @@ export default function CheckoutPage() {
                           <CardDescription>{plan.description}</CardDescription>
                         </div>
                       </div>
-                      <RadioGroupItem value={plan.id} checked={selectedPlan === plan.id} />
+                      <RadioGroupItem value={plan.id} id={plan.id} />
                     </div>
                   </CardHeader>
                   
