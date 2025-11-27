@@ -190,7 +190,7 @@ export default function CheckoutPage() {
                           <CardDescription>{plan.description}</CardDescription>
                         </div>
                       </div>
-                      <RadioGroupItem value={plan.id} id={plan.id} />
+                     
                     </div>
                   </CardHeader>
                   
@@ -484,39 +484,41 @@ export default function CheckoutPage() {
         {/* Testimonials */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">O que nossas clientes dizem</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Maria Silva",
-                rating: 5,
-                comment: "Minha pele nunca esteve tão boa! As receitas são fáceis e os resultados aparecem rápido."
-              },
-              {
-                name: "Ana Santos",
-                rating: 5,
-                comment: "Economizo muito dinheiro usando ingredientes que já tenho em casa. Vale muito a pena!"
-              },
-              {
-                name: "Julia Costa",
-                rating: 5,
-                comment: "O app mudou minha rotina de skin care. Adoro a personalização e as dicas diárias!"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-3">"{testimonial.comment}"</p>
-                  <p className="font-medium text-purple-600">{testimonial.name}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+         <div className="grid md:grid-cols-3 gap-6">
+  {[
+    {
+      name: "Maria Silva",
+      rating: 5,
+      comment:
+        "Minha pele nunca esteve tão boa! As receitas são fáceis e os resultados aparecem rápido."
+    },
+    {
+      name: "Ana Santos",
+      rating: 5,
+      comment:
+        "Economizo muito dinheiro usando ingredientes que já tenho em casa. Vale muito a pena!"
+    },
+    {
+      name: "Julia Costa",
+      rating: 5,
+      comment:
+        "O app mudou minha rotina de skin care. Adoro a personalização e as dicas diárias!"
+    }
+  ].map((testimonial, index) => (
+    <Card key={index} className="shadow-lg border border-purple-100 hover:scale-[1.02] transition-transform">
+      <CardContent className="p-6">
+        <div className="flex items-center gap-1 mb-3">
+          {[...Array(testimonial.rating)].map((_, i) => (
+            <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+          ))}
         </div>
-      </div>
-    </div>
-  )
-}
+
+        <p className="text-gray-700 italic mb-3">"{testimonial.comment}"</p>
+
+        <p className="font-semibold text-purple-600 text-right">
+          — {testimonial.name}
+        </p>
+      </CardContent>
+    </Card>
+  ))}
+</div>
