@@ -84,45 +84,45 @@ const plans: Plan[] = [
 ]
 
 export default function CheckoutPage() {
-  const [selectedPlan, setSelectedPlan] = useState('quarterly')
+  const [selectedPlan, setSelectedPlan] = useState("quarterly");
   const [billingInfo, setBillingInfo] = useState({
-    email: '',
-    fullName: '',
-    cpf: '',
-    phone: ''
-  })
-  const [paymentMethod, setPaymentMethod] = useState('credit')
+    email: "",
+    fullName: "",
+    cpf: "",
+    phone: "",
+  });
+  const [paymentMethod, setPaymentMethod] = useState("credit");
   const [cardInfo, setCardInfo] = useState({
-    number: '',
-    name: '',
-    expiry: '',
-    cvv: ''
-  })
-  const [acceptTerms, setAcceptTerms] = useState(false)
-  const [isProcessing, setIsProcessing] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
+    number: "",
+    name: "",
+    expiry: "",
+    cvv: "",
+  });
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
-  const selectedPlanData = plans.find(plan => plan.id === selectedPlan)
+  const selectedPlanData = plans.find((plan) => plan.id === selectedPlan);
 
-    const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (!acceptTerms) {
-      alert('Por favor, aceite os termos de serviço')
-      return
+      alert("Por favor, aceite os termos de serviço");
+      return;
     }
-    
-    setIsProcessing(true)
-    
-    setTimeout(() => {
-      setIsProcessing(false)
-      alert('Pagamento processado com sucesso! Redirecionando...')
-    }, 2000)
-  }
 
+    setIsProcessing(true);
+
+    setTimeout(() => {
+      setIsProcessing(false);
+      alert("Pagamento processado com sucesso! Redirecionando...");
+    }, 2000);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
