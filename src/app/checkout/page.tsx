@@ -113,7 +113,7 @@ export default function CheckoutPage() {
 
     if (!acceptTerms) {
       alert("Por favor, aceite os termos de serviço");
-      return
+      
     }
 
     setIsProcessing(true);
